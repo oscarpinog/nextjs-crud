@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import Navigation from '../components/Navigation'
+
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -25,8 +27,23 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="stylesheet" href="https://bootswatch.com/5/slate/bootstrap.min.css" />
+      </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
+      <div className="container-fluid">
+      <div className="row">
+        {/* Navbar a la izquierda */}
+        <div className="col-md-3 col-lg-2 d-md-block bg-dark text-white min-vh-100 p-0">
+          <Navigation />
+        </div>
+
+        {/* Contenido principal */}
+        <main className="col-md-9 col-lg-5 p-4">
+          {children}
+        </main>
+      </div>
+    </div>
       </body>
     </html>
   );
