@@ -40,3 +40,18 @@ a {
     color-scheme: dark;
   }
 }
+
+
+.sidebar {
+  width: 25%; /* Sidebar ocupa el 25% */
+  transition: width 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  overflow: hidden;
+}
+
+.sidebar.collapsed {
+  width: 0 !important; 
+  opacity: 0;
+  padding: 0;
+}
+
+

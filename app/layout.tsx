@@ -27,24 +27,24 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <link rel="stylesheet" href="https://bootswatch.com/5/slate/bootstrap.min.css" />
-      </head>
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-      <div className="container-fluid">
-      <div className="row">
-        {/* Navbar a la izquierda */}
-        <div className="col-md-3 col-lg-2 d-md-block bg-dark text-white min-vh-100 p-0">
-          <Navigation />
-        </div>
+    <head>
+      <link rel="stylesheet" href="https://bootswatch.com/5/slate/bootstrap.min.css" />
+    </head>
+    <body className="d-flex flex-column min-vh-100">
+      <div className="container-fluid flex-grow-1 d-flex">
+        <div className="row flex-grow-1 w-100">
+          {/* Navbar a la izquierda */}
+          <div className="col-md-3 d-md-block bg-dark text-white min-vh-100 p-0">
+            <Navigation />
+          </div>
 
-        {/* Contenido principal */}
-        <main className="col-md-9 col-lg-5 p-4">
-          {children}
-        </main>
+          {/* Contenido principal */}
+          <main className="col-md-9 p-4 d-flex flex-column justify-content-start">
+            {children}
+          </main>
+        </div>
       </div>
-    </div>
-      </body>
-    </html>
+    </body>
+  </html>
   );
 }
